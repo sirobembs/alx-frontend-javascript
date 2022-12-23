@@ -1,16 +1,29 @@
 export class HolbertonClass {
-  constructor(year, location) {
+  constructor(year = '', location = '') {
     this._year = year;
     this._location = location;
   }
+}
+get year() {
+	return this._year;
+}
 
-  get year() {
-    return this._year;
-  }
+set year() {
+	if (typeof value !== 'number') {
+		throw new TypeError('size must be a number');
+	}
+	this._year = value;
+}
 
-  get location() {
-    return this._location;
-  }
+get location() {
+	return this._location;
+}
+
+set location() {
+	if (typeof value !== 'string') {
+		throw new TypeError('size must be a string');
+	}
+	this._location = value;
 }
 
 const class2019 = new HolbertonClass(2019, 'San Francisco');
