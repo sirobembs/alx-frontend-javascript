@@ -1,29 +1,16 @@
 export class HolbertonClass {
-  constructor(year = '', location = '') {
+  constructor(year, location) {
     this._year = year;
     this._location = location;
   }
-}
-get year() {
-	return this._year;
-}
 
-set year() {
-	if (typeof value !== 'number') {
-		throw new TypeError('size must be a number');
-	}
-	this._year = value;
-}
+  get year() {
+    return this._year;
+  }
 
-get location() {
-	return this._location;
-}
-
-set location() {
-	if (typeof value !== 'string') {
-		throw new TypeError('size must be a string');
-	}
-	this._location = value;
+  get location() {
+    return this._location;
+  }
 }
 
 const class2019 = new HolbertonClass(2019, 'San Francisco');
@@ -41,10 +28,7 @@ export class StudentHolberton {
   }
 
   get holbertonClass() {
-    return this.holbertonClass;
-  }
-	get fullStudentDescription() {
-		return `${this._firstName} ${this._lastName} - ${this._holbertonClass.year} - ${this._holbertonClass.location}`;
+    return this._holbertonClass;
   }
 }
 
@@ -55,4 +39,5 @@ const student4 = new StudentHolberton('Donald', 'Bush', class2019);
 const student5 = new StudentHolberton('Jason', 'Sandler', class2019);
 
 const listOfStudents = [student1, student2, student3, student4, student5];
+
 export default listOfStudents;
